@@ -1,0 +1,148 @@
+/* 1. Die "Bühne": Sorgt dafür, dass die ganze Seite den Bildschirm füllt */
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  flex-direction: column;
+}
+
+/* 2. Zentrierung: Das App-Div wird zum Flex-Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikal mittig */
+  align-items: center;     /* Horizontal mittig */
+}
+
+/* 3. Der Container für den Test */
+.container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* 4. FIXER PLATZHALTER: Verhindert das Springen der Buttons */
+.question-container {
+  height: 150px; /* Dieser Wert bleibt immer gleich */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.links {
+  margin-top: 200px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-text {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: 0;
+  color: #d1cccc;
+}
+
+/* 5. Buttons und Beschriftung */
+.selection-area {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.numbers {
+  display: flex;
+  gap: 12px;
+}
+
+.number-button {
+  background: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+  width: 50px;  /* Feste Breite für perfekte Symmetrie */
+  height: 50px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.number-button:hover {
+  background: #444;
+  border-color: #eee;
+}
+
+.label-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Orientiert sich an der Breite der .numbers-Reihe */
+  margin-top: 15px;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+  g:focus,
+  path:focus {
+    outline: none !important;
+  }
+
+/* Media Query für mobile Geräte (Smartphones) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem; /* Kleinerer Titel */
+    margin-bottom: 20px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  /* Höhe des Textfeldes leicht anpassen */
+  .question-container {
+    height: 200px; /* Mehr Platz für Textumbruch auf schmalen Bildschirmen */
+    margin-bottom: 20px;
+  }
+
+  .question-text {
+    font-size: 1.1rem; /* Text etwas kleiner, damit er nicht zu wuchtig ist */
+    padding: 0 10px;
+  }
+
+  /* Buttons nebeneinander fließen lassen oder kleiner machen */
+  .numbers {
+    gap: 6px; /* Weniger Abstand zwischen den Zahlen */
+    flex-wrap: wrap; /* Falls das Display extrem schmal ist, brechen sie um */
+    justify-content: center;
+  }
+
+  .number-button {
+    width: 45px;  /* Etwas schmaler */
+    height: 45px;
+    font-size: 1rem;
+    padding: 0; /* Padding entfernen für exakte Kreise/Quadrate */
+  }
+
+  /* Labels unter den Buttons anpassen */
+  .label-container {
+    max-width: 300px; /* Enge Begrenzung passend zu den Buttons */
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+
+  /* Die Chart am Ende skalieren */
+  g:focus,
+  path:focus {
+    outline: none !important;
+  }
+  
+}
